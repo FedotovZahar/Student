@@ -15,27 +15,27 @@ type
   TForm1 = class(TForm) // класс формы
     found_Button: TButton;   //поля класса
     MainMenu: TMainMenu;
-    MenuItem1: TMenuItem;
-    MenuItem2: TMenuItem;
-    MenuItem3: TMenuItem;
+    Open_File: TMenuItem;
+    Save_Data: TMenuItem;
+    Save_Result: TMenuItem;
     OpenDialog: TOpenDialog;
-    open_menuitem: TMenuItem;
+    open_menu_Fail: TMenuItem;
     SaveDialog1: TSaveDialog;
-    close_MenuItem4: TMenuItem;
-    instraction_MenuItem: TMenuItem;
+    Close_File: TMenuItem;
+    Instraction: TMenuItem;
     result_Label: TLabel;
     X_Label: TLabel;
     Y_Label: TLabel;
     X_Edit: TEdit;
     Y_Edit: TEdit;
     Print_Memo: TMemo; // конец полей класса
-    procedure close_MenuItem4Click(Sender: TObject); //объявление методов класса
+    procedure Close_FileClick(Sender: TObject); //объявление методов класса
     procedure FormCreate(Sender: TObject);
     procedure found_ButtonClick(Sender: TObject);
-    procedure instraction_MenuItemClick(Sender: TObject);
-    procedure MenuItem1Click(Sender: TObject);
-    procedure MenuItem2Click(Sender: TObject);
-    procedure MenuItem3Click(Sender: TObject);
+    procedure InstractionClick(Sender: TObject);
+    procedure Open_FileClick(Sender: TObject);
+    procedure Save_DataClick(Sender: TObject);
+    procedure Save_ResultClick(Sender: TObject);
     procedure DataFromForm();  // конец объявления методов класса
   private
 
@@ -88,13 +88,13 @@ begin
 end;
 
 //процедура вывода справки
-procedure TForm1.instraction_MenuItemClick(Sender: TObject);
+procedure TForm1.InstractionClick(Sender: TObject);
 begin
   ShowMessage('автор- Федотов Захар'+' номер задачи- 2'+' условие задачи- Даны действительные числа x и y. Получить (|x|-|y|)/1+|x*y|'+' ссылка- http://чибгу.рф/zadachnik/Glava01/index01.htm#z2 ');
 end;
 
 //процедура выхода
-procedure TForm1.close_MenuItem4Click(Sender: TObject);
+procedure TForm1.Close_FileClick(Sender: TObject);
 begin
   close
 end;
@@ -105,7 +105,7 @@ begin
   fl:=true;
 end;
 
-procedure TForm1.MenuItem1Click(Sender: TObject);
+procedure TForm1.Open_FileClick(Sender: TObject);
 begin
   if OpenDialog.Execute then
     begin
@@ -118,7 +118,7 @@ begin
     end;
 end;
 
-procedure TForm1.MenuItem2Click(Sender: TObject);
+procedure TForm1.Save_DataClick(Sender: TObject);
 begin
   DataFromForm();
   if fl=true then
@@ -137,7 +137,7 @@ begin
 end;
 
 //процедура вывода данных из поля Memo
-procedure TForm1.MenuItem3Click(Sender: TObject);
+procedure TForm1.Save_ResultClick(Sender: TObject);
 begin
   if SaveDialog1.Execute then
     if SaveDialog1.FileName <> '' then

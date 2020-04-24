@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 980
+  Left = 1284
   Height = 244
-  Top = 441
-  Width = 306
+  Top = 489
+  Width = 308
   Caption = 'Решение примера'
   ClientHeight = 224
-  ClientWidth = 306
+  ClientWidth = 308
   Menu = MainMenu
   OnCreate = FormCreate
   LCLVersion = '2.0.6.0'
@@ -19,7 +19,7 @@ object Form1: TForm1
     Left = 176
     Height = 58
     Top = 10
-    Width = 110
+    Width = 112
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 10
     BorderSpacing.Right = 20
@@ -73,7 +73,7 @@ object Form1: TForm1
     Left = 11
     Height = 96
     Top = 118
-    Width = 285
+    Width = 287
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Right = 10
     BorderSpacing.Bottom = 10
@@ -136,28 +136,28 @@ object Form1: TForm1
   object MainMenu: TMainMenu
     left = 48
     top = 160
-    object open_menuitem: TMenuItem
+    object open_menu_Fail: TMenuItem
       Caption = 'Файл'
-      object MenuItem1: TMenuItem
+      object Open_File: TMenuItem
         Caption = 'Открыть'
-        OnClick = MenuItem1Click
+        OnClick = Open_FileClick
       end
-      object MenuItem2: TMenuItem
+      object Save_Data: TMenuItem
         Caption = 'Сохранить'
-        OnClick = MenuItem2Click
+        OnClick = Save_DataClick
       end
-      object MenuItem3: TMenuItem
+      object Save_Result: TMenuItem
         Caption = 'Сохранить отчёт'
-        OnClick = MenuItem3Click
+        OnClick = Save_ResultClick
       end
     end
-    object close_MenuItem4: TMenuItem
+    object Close_File: TMenuItem
       Caption = 'Выход'
-      OnClick = close_MenuItem4Click
+      OnClick = Close_FileClick
     end
-    object instraction_MenuItem: TMenuItem
+    object Instraction: TMenuItem
       Caption = 'Справка'
-      OnClick = instraction_MenuItemClick
+      OnClick = InstractionClick
     end
   end
   object OpenDialog: TOpenDialog

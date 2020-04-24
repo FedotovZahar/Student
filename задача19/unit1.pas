@@ -13,12 +13,12 @@ type
 
   TForm1 = class(TForm)//класс формы
     MainMenu1: TMainMenu;//поля  класса
-    MenuItem1: TMenuItem;
-    MenuItem2: TMenuItem;
-    MenuItem3: TMenuItem;
-    MenuItem4: TMenuItem;
-    MenuItem5: TMenuItem;
-    MenuItem6: TMenuItem;
+    Open_Menu_File: TMenuItem;
+    Open_File: TMenuItem;
+    Data_Save_File: TMenuItem;
+    Save_Result: TMenuItem;
+    Close_File: TMenuItem;
+    Instruction: TMenuItem;
     OpenDialog1: TOpenDialog;
     SaveDialog1: TSaveDialog;
     time_Button: TButton;
@@ -32,12 +32,12 @@ type
     netro_Label: TLabel;
     print_Label: TLabel;
     print_Memo: TMemo; //конец полей класса
+    procedure Data_Save_FileClick(Sender: TObject);
     procedure FormCreate(Sender: TObject); //  объявление методов класса
-    procedure MenuItem2Click(Sender: TObject);
-    procedure MenuItem3Click(Sender: TObject);
-    procedure MenuItem4Click(Sender: TObject);
-    procedure MenuItem5Click(Sender: TObject);
-    procedure MenuItem6Click(Sender: TObject);
+    procedure Open_FileClick(Sender: TObject);
+    procedure Save_ResultClick(Sender: TObject);
+    procedure Close_FileClick(Sender: TObject);
+    procedure InstructionClick(Sender: TObject);
     procedure time_ButtonClick(Sender: TObject);
     procedure DataFromForm(); //конец объявления методов класса
   private
@@ -103,7 +103,7 @@ begin
      end;
 end;
 
-procedure TForm1.MenuItem2Click(Sender: TObject);
+procedure TForm1.Open_FileClick(Sender: TObject);
 begin
   if OpenDialog1.Execute then
     begin
@@ -123,26 +123,26 @@ begin
   fl:=true;
 end;
 
-procedure TForm1.MenuItem3Click(Sender: TObject);
+procedure TForm1.Data_Save_FileClick(Sender: TObject);
 begin
-  DataFromForm();
-  if fl=true then
-    begin
-  if SaveDialog1.Execute then
-    if SaveDialog1.FileName <> '' then
-      begin
-        save_data(s,v1,v2,a,SaveDialog1.FileName);
-      end;
-    end
-  else
-    begin
-      fl:=true;
-      exit;
-    end;
+ DataFromForm();
+ if fl=true then
+   begin
+ if SaveDialog1.Execute then
+   if SaveDialog1.FileName <> '' then
+     begin
+       save_data(s,v1,v2,a,SaveDialog1.FileName);
+     end;
+   end
+ else
+   begin
+     fl:=true;
+     exit;
+   end;
 end;
 
 //процедура сохранения данных из Memo
-procedure TForm1.MenuItem4Click(Sender: TObject);
+procedure TForm1.Save_ResultClick(Sender: TObject);
 begin
   if SaveDialog1.Execute then
     if SaveDialog1.FileName <> '' then
@@ -150,13 +150,13 @@ begin
 end;
 
 // процедура выхода
-procedure TForm1.MenuItem5Click(Sender: TObject);
+procedure TForm1.Close_FileClick(Sender: TObject);
 begin
   close
 end;
 
 //процедура вывода справки
-procedure TForm1.MenuItem6Click(Sender: TObject);
+procedure TForm1.InstructionClick(Sender: TObject);
 begin
  ShowMessage('автор- Федотов Захар'+' номер задачи- 19 '+'Определить время, через которое встретятся два тела, равноускоренно движущиеся навстречу друг другу, если известны их начальные скорости, ускорения и начальное расстояние между ними.'+' ссылка- http://чибгу.рф/zadachnik/Glava01/index01.htm#z2 ');
 end;

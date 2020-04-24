@@ -181,28 +181,28 @@ object Form1: TForm1
   object MainMenu1: TMainMenu
     left = 144
     top = 160
-    object MenuItem1: TMenuItem
+    object Open_Menu_File: TMenuItem
       Caption = 'Файл'
-      object MenuItem2: TMenuItem
+      object Open_File: TMenuItem
         Caption = 'Открыть'
-        OnClick = MenuItem2Click
+        OnClick = Open_FileClick
       end
-      object MenuItem3: TMenuItem
+      object Data_Save_File: TMenuItem
         Caption = 'Сохранить'
-        OnClick = MenuItem3Click
+        OnClick = Data_Save_FileClick
       end
-      object MenuItem4: TMenuItem
+      object Save_Result: TMenuItem
         Caption = 'Сохранить отчёт'
-        OnClick = MenuItem4Click
+        OnClick = Save_ResultClick
       end
     end
-    object MenuItem5: TMenuItem
+    object Close_File: TMenuItem
       Caption = 'Выход'
-      OnClick = MenuItem5Click
+      OnClick = Close_FileClick
     end
-    object MenuItem6: TMenuItem
+    object Instruction: TMenuItem
       Caption = 'Справка'
-      OnClick = MenuItem6Click
+      OnClick = InstructionClick
     end
   end
   object OpenDialog1: TOpenDialog
