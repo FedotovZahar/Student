@@ -1,0 +1,175 @@
+object Form1: TForm1
+  Left = 1358
+  Height = 244
+  Top = 557
+  Width = 308
+  Caption = 'Решение примера'
+  ClientHeight = 224
+  ClientWidth = 308
+  Menu = MainMenu
+  OnCreate = FormCreate
+  LCLVersion = '2.0.6.0'
+  object found_Button: TButton
+    AnchorSideLeft.Control = Y_Edit
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Print_Memo
+    Left = 176
+    Height = 58
+    Top = 10
+    Width = 112
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 20
+    BorderSpacing.Bottom = 50
+    Caption = 'Выполнить'
+    OnClick = found_ButtonClick
+    TabOrder = 0
+  end
+  object X_Edit: TEdit
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = found_Button
+    AnchorSideBottom.Control = Print_Memo
+    Left = 11
+    Height = 23
+    Top = 32
+    Width = 50
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Left = 11
+    BorderSpacing.Top = 32
+    BorderSpacing.Right = 40
+    BorderSpacing.Bottom = 63
+    TabOrder = 1
+    Text = '1'
+  end
+  object Y_Edit: TEdit
+    AnchorSideLeft.Control = X_Edit
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = found_Button
+    AnchorSideBottom.Control = Print_Memo
+    Left = 81
+    Height = 23
+    Top = 32
+    Width = 55
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Left = 70
+    BorderSpacing.Top = 32
+    BorderSpacing.Right = 40
+    BorderSpacing.Bottom = 63
+    TabOrder = 2
+    Text = '1'
+  end
+  object Print_Memo: TMemo
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 11
+    Height = 96
+    Top = 118
+    Width = 287
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    TabOrder = 3
+  end
+  object X_Label: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Y_Edit
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = X_Edit
+    AnchorSideBottom.Side = asrBottom
+    Left = 30
+    Height = 15
+    Top = 10
+    Width = 10
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Left = 30
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 66
+    BorderSpacing.Bottom = 30
+    Caption = ' X'
+    ParentColor = False
+  end
+  object Y_Label: TLabel
+    AnchorSideLeft.Control = X_Edit
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Y_Edit
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Y_Edit
+    AnchorSideBottom.Side = asrBottom
+    Left = 101
+    Height = 15
+    Top = 10
+    Width = 10
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 66
+    BorderSpacing.Bottom = 30
+    Caption = ' Y'
+    ParentColor = False
+  end
+  object result_Label: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Y_Edit
+    AnchorSideBottom.Control = Print_Memo
+    Left = 14
+    Height = 15
+    Top = 98
+    Width = 53
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 14
+    BorderSpacing.Top = 37
+    BorderSpacing.Bottom = 5
+    Caption = 'Результат'
+    ParentColor = False
+  end
+  object MainMenu: TMainMenu
+    left = 48
+    top = 160
+    object open_menu_Fail: TMenuItem
+      Caption = 'Файл'
+      object Open_File: TMenuItem
+        Caption = 'Открыть'
+        OnClick = Open_FileClick
+      end
+      object Save_Data: TMenuItem
+        Caption = 'Сохранить'
+        OnClick = Save_DataClick
+      end
+      object Save_Result: TMenuItem
+        Caption = 'Сохранить отчёт'
+        OnClick = Save_ResultClick
+      end
+    end
+    object Close_File: TMenuItem
+      Caption = 'Выход'
+      OnClick = Close_FileClick
+    end
+    object Instraction: TMenuItem
+      Caption = 'Справка'
+      OnClick = InstractionClick
+    end
+  end
+  object OpenDialog: TOpenDialog
+    FileName = 'C:\Users\Захар\Desktop\laz1'
+    Filter = 'Текстовый файл |*.txt|типизированный файл|*.dat'
+    InitialDir = 'C:\Users\Захар\Desktop\'
+    left = 120
+    top = 160
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Текстовый файл|*.txt'
+    left = 208
+    top = 160
+  end
+end
